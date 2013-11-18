@@ -1,0 +1,37 @@
+/* navbar */
+#header{
+    background-color: #7829A0;
+    border-color: #7829A0;
+    background-image: none;
+}
+
+#fonts{
+	color:#FFFFFF;
+}
+
+.icon-zoom-in
+{
+  position:relative;
+  left:23px;
+  top:-8px;
+  z-index:999;
+}
+.input-append input
+{
+  height:20px;
+  padding-left:25px;
+}
+
+#seach{
+	position:absolute;
+	left:0;
+	right:0;
+}
+
+#bodyBackground{
+ /* background-color: #F0F3F9;*/
+  background-image:url('/bootstrap/img/kids-of-all-ages-banner.jpg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center; 
+}
