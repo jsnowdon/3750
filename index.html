@@ -6,20 +6,30 @@
 <html>
   <head>
     <title>Lab3 Jonathan Snowdon</title>
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
   </head>
 
   <!-- Start of Header Navbar-->
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top" id="header">
       <div class="navbar-inner" id="header">
-            <div align="right">
+            <div style="float:right; padding-right:10px" >
                 <p id="fonts">Want to get involved? Create an account!</p>
                 <button class="btn btn-default">Create Account</button>
                 <button class="btn btn-default">Sign in</button>
             </div>
-            <h1 id="fonts">KidTribute<h1>
+            <h1 style="float:left;padding-left:10px" id="fonts">KidTribute<h1>
+            <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.<h4>
+            
       </div>
+            <div>
+                <form class="form-search form-inline">
+                    <div class="input-append">
+                        <input type="text" class="search-query" placeholder="Search..." />
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
     </div>
     <!-- End of Header Navbar-->
 
@@ -36,5 +46,5 @@
     <!-- End of Footer Navbar -->
 
   </body>
-  <script src="/js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-1.10.2.js"></script>
 </html>
