@@ -1,8 +1,7 @@
 $(document).ready(function() {
     
-    $(".dropdown-menu li a").click(function() {
-        $(".btn:first-child").text($(this).text());
-        $(".btn:first-child").val($(this).text());
+    $('#searchingDropdown li a').click(function() {
+        $("#dropdownBtn").text($(this).text());
     });
-
+    
 });
