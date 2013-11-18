@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lab3 Jonathan Snowdon</title>
+    <title>KidTribute</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
   </head>
@@ -14,22 +14,38 @@
     <div class="navbar navbar-fixed-top" id="header">
       <div class="navbar-inner" id="header">
             <div style="float:right; padding-right:10px" >
-                <p id="fonts">Want to get involved? Create an account!</p>
-                <button class="btn btn-default">Create Account</button>
-                <button class="btn btn-default">Sign in</button>
+                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default">Sign in</button>
+                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default">Create Account</button>
+                <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
             </div>
             <h1 style="float:left;padding-left:10px" id="fonts">KidTribute<h1>
             <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.<h4>
             
       </div>
-            <div>
-                <form class="form-search form-inline">
-                    <div class="input-append">
-                        <input type="text" class="search-query" placeholder="Search..." />
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </div>
-                </form>
+        <div style="padding-left:10px">
+            <div class="input-prepend input-append">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown" >
+                    Subject
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Visual Arts</a></li>
+                        <li><a href="#">Geography</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Physical Education</a></li>
+                        <li><a href="#">Language Arts</a></li>
+                        <li><a href="#">Music</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="span8 search-query">
+                <button type="submit" class="btn btn-primary">Search</button>
             </div>
+        </div>
     </div>
     <!-- End of Header Navbar-->
 
@@ -47,4 +63,6 @@
 
   </body>
   <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 </html>
