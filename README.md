@@ -4,6 +4,8 @@
 H.U.I. Frontend Development
 -------------------------------------
 Members
-nick
-jon
-james
+
+* Nick
+* Jon
+* James
+* Matt
