@@ -30,3 +30,8 @@
 	left:0;
 	right:0;
 }
+
+#signIn {
+  width: 400px; /* SET THE WIDTH OF THE MODAL */
+  margin-left: -170px;
+}
