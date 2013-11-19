@@ -1,0 +1,159 @@
+<!-- Group Name: H.U.I.
+                   Helping U Interact
+
+     Student Names: James Brooks
+                    Nick Bruner
+                    Jonathan Snowdon
+                    Matt Stark
+
+     CIS*3750 Class Project: KidTribute
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KidTribute: Create Account</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+  </head>
+
+  <!-- Start of Header Navbar-->
+    <div class="navbar navbar-static-top" id="header" role="navigation">
+    <div class="container">
+      <div class="navbar-header" id="header">
+            <div style="float:right; padding-right:10px" >
+                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default"  href="#signIn" data-toggle="modal">Sign in</button>
+                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
+                <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
+            </div>
+            <h1 style="float:left;padding-left:10px" id="fonts">KidTribute</h1>
+            <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.</h4>
+            
+      </div>
+        <div style="padding-left:10px">
+            <div class="input-prepend input-append">
+                <div class="btn-group">
+                    <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                    Subject
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" id="searchingDropdown">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Visual Arts</a></li>
+                        <li><a href="#">Geography</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Physical Education</a></li>
+                        <li><a href="#">Language Arts</a></li>
+                        <li><a href="#">Music</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="span8 search-query">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End of Header Navbar-->
+
+    <div class="modal fade hide" id="signIn">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	        <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Please Sign In</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div style="text-align:center;" >
+	            <p>You do not need an account to donate!</p>
+	          </div>
+	            <form method="post" class="loginForm" action='login/users'>
+	                  <p>Username: </p><input type="text" name="userid" title="Please enter your username" size="15" required>
+	                  <br>
+	                  <p>Password: </p><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required>
+	                  <br>
+	                  <button name="submit" type="submit" class="btn btn-primary btn-success">Login</button>
+	            </form>
+	            <p>Don't have an account and want to volunteer? Create one here!</p><button name="modalCreateAccount" class="btn btn-primary">Create Account</button>
+	        </div>
+	      </div><!-- /.modal-content -->
+	    </div><!-- /.modal-dialog -->
+  	</div>
+
+    <body>
+        <!-- Start of content -->
+        <form method="post" class="createAccount">
+            <table style="margin-left:20px">
+                <tr>
+                <td>
+                <h1>Enter Your Account Details</h1>
+                </td>
+                <td>
+                <h1>Enter Subjects You Can Help In</h1>
+                </td>
+                <td>
+                <h1>Enter The Name Of Your Professions</h1>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <table>
+                    <tr>
+                        <td>Username: </td>
+                        <td><input type="text" name="username" title="Please enter your username" size="15" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password: </td>
+                        <td><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password: </td>
+                        <td><input type="password" name="passwordRepeat" autocomplete="off" size="15" title="Please enter your password again" required></td>
+                    </tr>
+                    <tr>
+                        <td>First Name: </td>
+                        <td><input type="text" name="firstname" title="Please enter your first name" size="15" required></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name: </td>
+                        <td><input type="text" name="lastname" title="Please enter your last name" size="15" required></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number: </td>
+                        <td><input type='tel' pattern='[\(]\d{3}[\)] \d{3}[\-]\d{4}' title='(999) 999-9999'></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="email" name="email" title="Please enter your email" size="15" required></td>
+                    </tr>
+                </table>
+                </td>
+                <td>
+                yeyeye
+                </td>
+                <td>
+                what's up
+                </td>
+                </tr>
+                </table>
+                <h5 style="margin-left:20px">About Me:</h5>
+                <textarea name="aboutMe" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" placeholder="Tell us about yourself"></textarea>
+                <br>
+                <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Login</button>
+        </form>
+        <!-- End of content -->
+        
+        <!-- Start of Footer Navbar -->
+        <div style="float:left" class="navbar navbar-inverse navbar-fixed-bottom">
+            <p> &copy; Helping U Interact</p>
+        </div>  
+        <!-- End of Footer Navbar -->
+        
+    </body>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</html>
