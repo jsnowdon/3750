@@ -1,11 +1,52 @@
-/* navbar */
+.outer {
+    width: 200px;
+    height: 200px;
+    -webkit-box-shadow: 0px 0px 10px #4d4d4d;
+    -moz-box-shadow: 0px 0px 10px #4d4d4d;
+    box-shadow: 10px 10px 10px #4d4d4d;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;  
+    border-radius: 8px;
+    border:solid white 1px;
+    overflow: hidden;
+    padding: 10px;
+}
+.image {
+    background: white;
+    padding: 0;
+     -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;  
+    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
 
+#background{
+    background-color: #FCF5FF !important;
+    border-color: #FCF5FF !important;
+    background-image: none !important;
 
+}
+
+#tableBackground{
+    background-color: #F0F3F9 !important;
+    border-color: #F0F3F9 !important;
+    background-image: none !important;
+}
 
 #header{
     background-color: #7829A0;
     border-color: #7829A0;
     background-image: none;
+}
+
+#footer{
+    background-color: #7829A0 !important;
+    border-color: #7829A0 !important;
+    background-image: none !important;
 }
 
 #fonts{
