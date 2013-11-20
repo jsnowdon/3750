@@ -24,6 +24,11 @@
     overflow: hidden;
 }
 
+#subjectButtons{
+  font-size: xx-large;
+  padding: relative;
+}
+
 #background{
     background-color: #FCF5FF !important;
     border-color: #FCF5FF !important;
