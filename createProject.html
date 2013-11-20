@@ -1,0 +1,163 @@
+<!-- Group Name: H.U.I.
+                   Helping U Interact
+
+     Student Names: James Brooks
+                    Nick Bruner
+                    Jonathan Snowdon
+                    Matt Stark
+
+     CIS*3750 Class Project: KidTribute
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KidTribute</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+  </head>
+    
+    <body id="background">
+        <div id="wrap"> 
+            <!-- Start of Header Navbar-->
+        <div class="navbar navbar-static-top" id="header" role="navigation">
+            <div class="container">
+              <div class="navbar-header" id="header">
+                    <div style="float:right; padding-right:10px" >
+                        <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default"  href="#signIn" data-toggle="modal">Sign in</button>
+                        <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
+                        <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
+                    </div>
+                    <h1 style="float:left;padding-left:10px"><a href="#"  id="fonts">KidTribute</a><h1>
+                    <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.<h4>
+                    
+              </div>
+              <br><br><br>
+                <div style="padding-left:10px">
+                    <div class="input-prepend input-append">
+                        <div class="btn-group">
+                            <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                            Subject
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="searchingDropdown">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Science</a></li>
+                                <li><a href="#">Math</a></li>
+                                <li><a href="#">Visual Arts</a></li>
+                                <li><a href="#">Geography</a></li>
+                                <li><a href="#">Technology</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Physical Education</a></li>
+                                <li><a href="#">Language Arts</a></li>
+                                <li><a href="#">Music</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="span8 search-query">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Header Navbar-->
+
+        <!-- Modal for sign in -->
+        <div class="modal fade hide" id="signIn">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Please Sign In</h4>
+                </div>
+                <div class="modal-body">
+                  <div style="text-align:center;" >
+                    <p>You do not need an account to donate!</p>
+                  </div>
+                    <form method="post" class="loginForm" action='login/users'>
+                          <p>Username: </p><input type="text" name="userid" title="Please enter your username" size="15" required>
+                          <br>
+                          <p>Password: </p><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required>
+                          <br>
+                          <button name="submit" type="submit" class="btn btn-primary btn-success">Login</button>
+                    </form>
+                    <p>Don't have an account and want to volunteer? Create one here!</p><button name="modalCreateAccount" class="btn btn-primary">Create Account</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        <!-- End of Modal -->
+        <div id="push"></div>
+        <!-- Start of content -->
+        <h1>Enter Your Project Details</h1>
+        <form method="post" class="createAccount">
+            <table>
+                <tr>
+                    <td>Project Title: </td>
+                    <td><input type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
+                </tr>
+                <tr>
+                    <td>Subject: </td>
+                    <td><div class="btn-group">
+                        <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="subjectDropdown">
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td>Goal: </td>
+                    <td><input type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
+                </tr>
+                <tr>
+                    <td>End Date: </td>
+                    <td><input type="date" name="date" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                </tr>
+                <tr>
+                    <td>Teacher Name: </td>
+                    <td>name here</td>
+                </tr>
+                <tr>
+                    <td>Contact Info: </td>
+                    <td>email here</td>
+                </tr>
+                <tr>
+                    <td>School Name: </td>
+                    <td>schoooll</td>
+                </tr>
+            </table>
+            <h5 style="margin-left:20px">Description:</h5>
+            <textarea name="description" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" placeholder="Tell us about your project"></textarea>
+            <br>
+            <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
+        </form>
+        <!-- End of content -->
+        
+        </div>
+        <!-- Start of Footer Navbar -->
+        <div id="footer">
+          <div class="container">
+            <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
+          </div>
+        </div>
+        <!-- End of Footer Navbar -->
+        
+    </body>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</html>
