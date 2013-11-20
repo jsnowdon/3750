@@ -48,12 +48,6 @@
     background-image: none;
 }
 
-#footer{
-    background-color: #7829A0 !important;
-    border-color: #7829A0 !important;
-    background-image: none !important;
-}
-
 #fonts{
 	color:#FFFFFF;
 }
@@ -80,4 +74,38 @@
 #signIn {
   width: 400px; /* SET THE WIDTH OF THE MODAL */
   margin-left: -170px;
+}
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -45px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 45px;
+}
+#footer {
+  background-color: #7829A0;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
