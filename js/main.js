@@ -5,3 +5,16 @@ $(document).ready(function() {
     });
     
 });
+
+$('form.loginForm').on('submit', function(event){
+
+	var form = $(this);
+	var userid = form.attr('userid').value;
+	var password = form.attr('password').value;
+
+	var url = "/retrieval.php?Login="+ userid + "," + password;
+
+	$.ajax({
+		url: url,
+	});
+});
