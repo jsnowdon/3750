@@ -18,9 +18,9 @@
     
   </head>
     
-  <body id="background">
-    <div id="wrap"> 
-        <!-- Start of Header Navbar-->
+    <body id="background">
+        <div id="wrap"> 
+            <!-- Start of Header Navbar-->
         <div class="navbar navbar-static-top" id="header" role="navigation">
             <div class="container">
               <div class="navbar-header" id="header">
@@ -29,8 +29,9 @@
                         <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
                         <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
                     </div>
-                    <h1 style="float:left;padding-left:10px"><a onclick="location.href='index.html';" id="fonts">KidTribute</a><h1>
+                    <h1 style="float:left;padding-left:10px"><a href="#"  id="fonts">KidTribute</a><h1>
                     <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.<h4>
+                    
               </div>
               <br><br><br>
                 <div style="padding-left:10px">
@@ -87,58 +88,64 @@
             </div><!-- /.modal-dialog -->
         </div>
         <!-- End of Modal -->
-    <!-- Start of content -->
-    <div id="bodyBackground">
-        <div style="padding-left:250px; padding-right:250px">
-        
-
-            <div class="span8" style="text-align:center">
-                <img src="img/kids.png" />
-            </div>
-
-            
-            <p style="background-color:#F0F3F9; padding:20px">
-                <font size="6" style="padding:20px">About Us</font><br><br>
-                We plan to unite the community at large with the local school boards.
-                This will be done through the creation of educational activities in the
-                form of projects. These projects are laid out below by category, and all
-                active projects can be viewed on the site. For more information please
-                check out our about page.<br><br>
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-                Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
-            </p>
-        </div>
-    </div>
-    <!-- End of content -->
-    
-    <div id="push"></div>
+        <!-- Start of content -->
+        <h1>Enter Your Project Details</h1>
+        <form method="post" class="createAccount">
+            <table>
+                <tr>
+                    <td>Project Title: </td>
+                    <td><input type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
+                </tr>
+                <tr>
+                    <td>Subject: </td>
+                    <td><div class="btn-group">
+                        <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="subjectDropdown">
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td>Goal: </td>
+                    <td><input type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
+                </tr>
+                <tr>
+                    <td>End Date: </td>
+                    <td><input type="date" name="date" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                </tr>
+                <tr>
+                    <td>Teacher Name: </td>
+                    <td>name here</td>
+                </tr>
+                <tr>
+                    <td>Contact Info: </td>
+                    <td>email here</td>
+                </tr>
+                <tr>
+                    <td>School Name: </td>
+                    <td>schoooll</td>
+                </tr>
+            </table>
+            <h5 style="margin-left:20px">Description:</h5>
+            <textarea name="description" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" placeholder="Tell us about your project"></textarea>
+            <br>
+            <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
+        </form>
+        <!-- End of content -->
+        <div id="push"></div>
         </div>
         <!-- Start of Footer Navbar -->
         <div id="footer">
@@ -146,10 +153,10 @@
             <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
           </div>
         </div>
-    <!-- End of Footer Navbar -->
-
-  </body>
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+        <!-- End of Footer Navbar -->
+        
+    </body>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </html>
