@@ -89,61 +89,114 @@
         </div>
         <!-- End of Modal -->
         <!-- Start of content -->
-        <h1>Enter Your Project Details</h1>
-        <form method="post" class="createAccount">
-            <table>
-                <tr>
-                    <td>Project Title: </td>
-                    <td><input type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
-                </tr>
-                <tr>
-                    <td>Subject: </td>
-                    <td><div class="btn-group">
-                        <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
-                        Subject
-                        <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" id="subjectDropdown">
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">Science</a></li>
-                            <li><a href="#">Math</a></li>
-                            <li><a href="#">Visual Arts</a></li>
-                            <li><a href="#">Geography</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Drama</a></li>
-                            <li><a href="#">Physical Education</a></li>
-                            <li><a href="#">Language Arts</a></li>
-                            <li><a href="#">Music</a></li>
-                        </ul>
-                    </div></td>
-                </tr>
-                <tr>
-                    <td>Goal: </td>
-                    <td><input type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
-                </tr>
-                <tr>
-                    <td>End Date: </td>
-                    <td><input type="date" name="date" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
-                </tr>
-                <tr>
-                    <td>Teacher Name: </td>
-                    <td>name here</td>
-                </tr>
-                <tr>
-                    <td>Contact Info: </td>
-                    <td>email here</td>
-                </tr>
-                <tr>
-                    <td>School Name: </td>
-                    <td>schoooll</td>
-                </tr>
-            </table>
-            <h5 style="margin-left:20px">Description:</h5>
-            <textarea name="description" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" placeholder="Tell us about your project"></textarea>
-            <br>
-            <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
-        </form>
+        <div class="span6">
+            <h1>Enter Your Project Details</h1>
+            <form method="post" class="createProject">
+                <table>
+                    <tr>
+                        <td>Project Title: </td>
+                        <td><input type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Subject: </td>
+                        <td><div class="btn-group">
+                            <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                            Subject
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="subjectDropdown">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Science</a></li>
+                                <li><a href="#">Math</a></li>
+                                <li><a href="#">Visual Arts</a></li>
+                                <li><a href="#">Geography</a></li>
+                                <li><a href="#">Technology</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Physical Education</a></li>
+                                <li><a href="#">Language Arts</a></li>
+                                <li><a href="#">Music</a></li>
+                            </ul>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td>Goal: </td>
+                        <td><input type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date: </td>
+                        <td><input type="date" name="date" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                    </tr>
+                    <tr>
+                        <td>End Date: </td>
+                        <td><input type="date" name="date" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                    </tr>
+                    <tr>
+                        <td>Teacher Name: </td>
+                        <td>name here</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Info: </td>
+                        <td>email here</td>
+                    </tr>
+                    <tr>
+                        <td>School Name: </td>
+                        <td>schoool</td>
+                    </tr>
+                </table>
+                <h5 style="margin-left:20px">Description:</h5>
+                <textarea name="description" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" placeholder="Tell us about your project"></textarea>
+                <br>
+                <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
+            </form>
+        </div>
+
+        <div class="span6">
+            <h1>Example</h1>
+            <form>
+                <table id="exampleTable">
+                    <tr>
+                        <td>Project Title:</td>
+                        <td><input type="text" disabled="disabled" style="width:200px;" value="Clown Lessons for Students"></td>
+                    </tr>
+                    <tr>
+                        <td>Subject: </td>
+                        <td><button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" disabled="disabled">
+                            Drama
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Goal: </td>
+                        <td><input type="text" style="width:580px;" disabled="disabled" value="To teach the students entertainment and acting techniques from an experienced performer."></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date: </td>
+                        <td><input type="text" style="width:75px;" value="09/12/2013" disabled="disabled"></td>
+                    </tr>
+                    <tr>
+                        <td>End Date: </td>
+                        <td><input type="text" style="width:75px;" value="12/02/2013" disabled="disabled"></td>
+                    </tr>
+                    <tr>
+                        <td>Teacher Name: </td>
+                        <td>John Doe</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Info: </td>
+                        <td>john.doe@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>School Name: </td>
+                        <td>Central Public School</td>
+                    </tr>
+                </table>
+                <h5 style="margin-left:20px">Description:</h5>
+                <textarea name="description" style="width: 350px; height: 100px; margin-left:20px" maxlength="512" disabled="disabled">Looking for an experienced clown performer to help teach my class various acting and entertainment techniques. We have been studying facial expressions and would love to have a clown go in detail on this area.</textarea>
+                <br>
+            </form>
+        </div>
+
         <!-- End of content -->
         <div id="push"></div>
         </div>
