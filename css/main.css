@@ -114,3 +114,7 @@ body {
     padding-right: 20px;
   }
 }
+
+.CommunityMembers tr:nth-child(even) {
+    background-color: #F2F2F2;
+}

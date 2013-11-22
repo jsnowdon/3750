@@ -11,115 +11,160 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KidTribute: Create Account</title>
+    <title>KidTribute</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     
   </head>
-
-  <!-- Start of Header Navbar-->
-    <div class="navbar navbar-static-top" id="header" role="navigation">
-    <div class="container">
-      <div class="navbar-header" id="header">
-            <div style="float:right; padding-right:10px" >
-                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default"  href="#signIn" data-toggle="modal">Sign in</button>
-                <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
-                <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
-            </div>
-            <h1 style="float:left;padding-left:10px" id="fonts">KidTribute</h1>
-            <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.</h4>
-            
-      </div>
-      <br><br><br>
-        <div style="padding-left:10px">
-            <div class="input-prepend input-append">
-                <div class="btn-group">
-                    <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
-                    Subject
-                    <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" id="searchingDropdown">
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Science</a></li>
-                        <li><a href="#">Math</a></li>
-                        <li><a href="#">Visual Arts</a></li>
-                        <li><a href="#">Geography</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Drama</a></li>
-                        <li><a href="#">Physical Education</a></li>
-                        <li><a href="#">Language Arts</a></li>
-                        <li><a href="#">Music</a></li>
-                    </ul>
-                </div>
-                <input type="text" class="span8 search-query">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- End of Header Navbar-->
-
-    <div class="modal fade hide" id="signIn">
-	    <div class="modal-dialog">
-	      <div class="modal-content">
-	        <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Please Sign In</h4>
-	        </div>
-	        <div class="modal-body">
-	          <div style="text-align:center;" >
-	            <p>You do not need an account to donate!</p>
-	          </div>
-	            <form method="post" class="loginForm" action='login/users'>
-	                  <p>Username: </p><input type="text" name="userid" title="Please enter your username" size="15" required>
-	                  <br>
-	                  <p>Password: </p><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required>
-	                  <br>
-	                  <button name="submit" type="submit" class="btn btn-primary btn-success">Login</button>
-	            </form>
-	            <p>Don't have an account and want to volunteer? Create one here!</p><button name="modalCreateAccount" class="btn btn-primary">Create Account</button>
-	        </div>
-	      </div><!-- /.modal-content -->
-	    </div><!-- /.modal-dialog -->
-  	</div>
-    <!-- End of Modal -->
     
   <body id="background">
-    <!-- Start of content -->
-    <div style="padding-left:50px">
-        <h1>Project Title Here</h1>
-        <h3>SchoolNameHere</h3>
-        <br>
-        <h3><u>Description</u></h3>
-        <img src="img/kids.jpg" height="300" width="300" style="float:left" />
-        <p style="padding-left:10px">
-            <font face="Comic Sans MS">
-            This is a description of some stuff that school kids do to gain support for doing the things we love
-            when we want to because we need the help and only you can help us doing these things so please help
-            us do things and we can live happily ever after until the end of time until maybe the world explodes
-            and none of us will be alive except for cockroaches because they can survive anything because they
-            don't get killed by radiation like radiation from the sun because the o-zone layer would be destroyed
-            and so all the sun rays would burn everything alive.
-            </font>
-        </p>
-    </div>
-        
-        
-    
-    
-    <!-- End of content -->
-    
-    <div id="push"></div>
-        </div>
-        <!-- Start of Footer Navbar -->
-        <div id="footer">
-          <div class="container">
-            <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
-          </div>
-        </div>
-    <!-- End of Footer Navbar -->
+    <div id="wrap"> 
 
+        <!-- Start of Header Navbar-->
+        <div class="navbar navbar-static-top" id="header" role="navigation">
+        <div class="container">
+          <div class="navbar-header" id="header">
+                <div style="float:right; padding-right:10px" >
+                    <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default"  href="#signIn" data-toggle="modal">Sign in</button>
+                    <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
+                    <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
+                </div>
+                <h1 style="float:left;padding-left:10px" id="fonts">KidTribute</h1>
+                <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.</h4>
+                
+          </div>
+          <br><br><br>
+            <div style="padding-left:10px">
+                <div class="input-prepend input-append">
+                    <div class="btn-group">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="span8 search-query">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- End of Header Navbar-->
+
+        <div class="modal fade hide" id="signIn">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Please Sign In</h4>
+                </div>
+                <div class="modal-body">
+                  <div style="text-align:center;" >
+                    <p>You do not need an account to donate!</p>
+                  </div>
+                    <form method="post" class="loginForm" action='login/users'>
+                          <p>Username: </p><input type="text" name="userid" title="Please enter your username" size="15" required>
+                          <br>
+                          <p>Password: </p><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required>
+                          <br>
+                          <button name="submit" type="submit" class="btn btn-primary btn-success">Login</button>
+                    </form>
+                    <p>Don't have an account and want to volunteer? Create one here!</p><button name="modalCreateAccount" class="btn btn-primary">Create Account</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        <!-- End of Modal -->
+
+        <!-- Start of content -->
+        <div style="padding-left:50px" class="span7">
+            <h1>Project Title Here</h1>
+            <h3>SchoolNameHere</h3>
+            <h3><u>Description</u></h3>
+            <img src="img/kids.jpg" alt="kids jumping" height="200" width="200" style="float:left" />
+            <p style="padding:10px">
+                <font face="Comic Sans MS">
+                This is a description of some stuff that school kids do to gain support for doing the things we love
+                when we want to because we need the help and only you can help us doing these things so please help
+                us do things and we can live happily ever after until the end of time until maybe the world explodes
+                and none of us will be alive except for cockroaches because they can survive anything because they
+                don't get killed by radiation like radiation from the sun because the o-zone layer would be destroyed
+                and so all the sun rays would burn everything alive.
+                </font>
+            </p>
+            <br>
+            <p><b>Date Posted:</b> Month, 1, 2014<p>
+            <p><b>End Date:</b> Month, 10, 2014<p>
+            <h3><u>Contact Information</u></h3>
+            <p><b>Teacher Name:</b> NameOfTeacher<p>
+            <p><b>Teacher E-mail:</b> TeachersEmail@email.ca</p>
+        </div>
+
+        <div class="span3" style="padding-top:20px">
+            <table border="5" class="span3 CommunityMembers">
+                <tr>
+                    <td><h3>Community Members</h3></td>
+                </tr>
+                <tr>
+                    <td><p align="center"><font size="4">Giacomo Guilizzani</font><p></td>
+                </tr>
+                <tr>
+                    <td><p align="center"><font size="4">John Doe</font><p></td>
+                </tr>
+                <tr>
+                    <td><p align="center"><font size="4">Jane Doe</font><p></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <!-- End of content -->
+        
+        <div id="push"></div>
+            </div>
+            <!-- Start of Footer Navbar -->
+            <div id="footer">
+              <div class="container">
+                <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
+              </div>
+            </div>
+        <!-- End of Footer Navbar -->
+
+    </div>
   </body>
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/bootstrap.min.js"></script>
