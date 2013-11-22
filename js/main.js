@@ -12,13 +12,17 @@ $(document).ready(function() {
 
 $('form.loginForm').on('submit', function(event){
 
-	var form = $(this);
-	var userid = form.attr('userid').value;
-	var password = form.attr('password').value;
-
-	var url = "/retrieval.php?Login="+ userid + "," + password;
+	var username = document.getElementById("userid").value;
+	var password = document.getElementById('password').value;
 
 	$.ajax({
-		url: url,
+		method: "POST",
+		url: "retrieval.php",
+		data: {
+			"key" : "123kidtribute",
+			"functionName" : "Login",
+			"parameters" : {"username":+ username, "password":+ password},
+		}
 	});
 });
+
