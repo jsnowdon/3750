@@ -16,3 +16,19 @@ $(document).ready(function() {
     addHeader();
     
 });
+
+$('form.loginForm').on('submit', function(event){
+
+	var username = document.getElementById("userid").value;
+	var password = document.getElementById('password').value;
+
+	$.ajax({
+		method: "POST",
+		url: "retrieval.php",
+		data: {
+			"key" : "123kidtribute",
+			"functionName" : "Login",
+			"parameters" : {"username":+ username, "password":+ password},
+		}
+	});
+});
