@@ -82,19 +82,24 @@ body {
   /* The html and body elements cannot have any padding or margin. */
 }
 
+#exampleTable {
+  margin-left:0;
+  margin-right: auto;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   /* Negative indent footer by it's height */
-  margin: 0 auto -45px;
+  margin: 0 auto;
 }
 
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-  height: 45px;
+  height: auto;
 }
 #footer {
   background-color: #7829A0;
@@ -108,4 +113,12 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+.CommunityMembers tr:nth-child(even) {
+    background-color: #F2F2F2;
+}
+
+.ResultsTable tr:nth-child(odd) {
+    background-color: #F2F2F2;
 }

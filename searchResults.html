@@ -88,80 +88,65 @@
         </div>
         <!-- End of Modal -->
 
-        <!-- Start of content -->
-        <div style="padding-left:50px" class="span7">
-            <h1>Project Title Here</h1>
-            <h3>SchoolNameHere</h3>
-            <h3><u>Description</u></h3>
-            <img src="img/kids.jpg" alt="kids jumping" height="200" width="200" style="float:left; padding-right:10px"></img>
-            <p style="padding:10px">
-                <font face="Comic Sans MS">
-                This is a description of some stuff that school kids do to gain support for doing the things we love
-                when we want to because we need the help and only you can help us doing these things so please help
-                us do things and we can live happily ever after until the end of time until maybe the world explodes
-                and none of us will be alive except for cockroaches because they can survive anything because they
-                don't get killed by radiation like radiation from the sun because the o-zone layer would be destroyed
-                and so all the sun rays would burn everything alive.
-                </font>
-            </p>
-            <br>
-            <p><b>Date Posted:</b> Month, 1, 2014<p>
-            <p><b>End Date:</b> Month, 10, 2014<p>
-            <h3><u>Contact Information</u></h3>
-            <p><b>Teacher Name:</b> NameOfTeacher<p>
-            <p><b>Teacher E-mail:</b> TeachersEmail@email.ca</p>
-        </div>
+        <table>
+            <tr>
+                <td><h3 style="padding-left:30px">Refine Search:</h3></td>
+                <td>
+                    <div class="btn-group" style="padding-left:10px">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Sort By:
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">Newest/Oldest</a></li>
+                            <li><a href="#">Most/Least Visited</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group" style="padding-left:20px">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
 
-        <div class="span3" style="padding-top:20px">
-            <table border="5" class="span3 CommunityMembers">
-                <tr>
-                    <td><h3>Community Members</h3></td>
-                </tr>
-                <tr>
-                    <td><p align="center"><font size="4">Giacomo Guilizzani</font><p></td>
-                </tr>
-                <tr>
-                    <td><p align="center"><font size="4">John Doe</font><p></td>
-                </tr>
-                <tr>
-                    <td><p align="center"><font size="4">Jane Doe</font><p></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
-        </div>
-        <!-- End of content -->
+        <table border="1" class="span10 ResultsTable">
+            <tr>
+                <td><h3>Results:</h3></td>
+            </tr>
+            <tr>
+                <td><h4 style="margin-left:20px"><a href="#">Generic Result 1</a></h4>
+                <p style="margin-left:20px"><i>Date Posted: Month, 1 2014</i></p>
+                <p style="margin-left:20px">Description:</p>
+                <textarea name="description" style="width: 900px; height: 100px; margin-left:20px" maxlength="512">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia bibendum mi, in sodales magna faucibus quis. Donec condimentum consectetur mauris, id dapibus odio sollicitudin quis. Proin blandit urna ac semper vestibulum. Nullam eget urna vitae lorem fermentum pharetra. Integer ac arcu porttitor, molestie mauris at, ullamcorper mauris. Praesent et suscipit lectus, at blandit dolor. Maecenas pretium vehicula felis in vestibulum. Pellentesque quis lorem posuere ligula ultrices congue. Praesent eget neque laoreet, cursus ante at, bibendum nunc. Sed pretium, quam sed suscipit iaculis, risus dui iaculis libero, et dapibus purus metus quis lacus. Morbi viverra vulputate arcu, in dapibus arcu rutrum ut. Morbi gravida massa neque, quis feugiat augue sollicitudin sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</textarea>
+                </td>
+            </tr>
+        </table>
         
         <div id="push"></div>
-            </div>
-            <!-- Start of Footer Navbar -->
-            <div id="footer">
-              <div class="container">
-                <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
-              </div>
-            </div>
+    </div>
+        <!-- Start of Footer Navbar -->
+        <div id="footer">
+          <div class="container">
+            <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
+          </div>
+        </div>
         <!-- End of Footer Navbar -->
 
     </div>
