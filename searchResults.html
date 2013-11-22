@@ -1,0 +1,157 @@
+<!-- Group Name: H.U.I.
+                   Helping U Interact
+
+     Student Names: James Brooks
+                    Nick Bruner
+                    Jonathan Snowdon
+                    Matt Stark
+
+     CIS*3750 Class Project: KidTribute
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KidTribute</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+  </head>
+    
+  <body id="background">
+    <div id="wrap"> 
+
+        <!-- Start of Header Navbar-->
+        <div class="navbar navbar-static-top" id="header" role="navigation">
+        <div class="container">
+          <div class="navbar-header" id="header">
+                <div style="float:right; padding-right:10px" >
+                    <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default"  href="#signIn" data-toggle="modal">Sign in</button>
+                    <button style="float:right; padding:5px margin-left: 5px" class="btn btn-default" onclick="location.href='createAccount.html';">Create Account</button>
+                    <p style="float:right; padding:10px" id="fonts">Want to get involved? Create an account!</p>
+                </div>
+                <h1 style="float:left;padding-left:10px" id="fonts">KidTribute</h1>
+                <h4 style="float:left;padding-left:10px" id="fonts">Helps schools help kids.</h4>
+                
+          </div>
+          <br><br><br>
+            <div style="padding-left:10px">
+                <div class="input-prepend input-append">
+                    <div class="btn-group">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="span8 search-query">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- End of Header Navbar-->
+
+        <div class="modal fade hide" id="signIn">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Please Sign In</h4>
+                </div>
+                <div class="modal-body">
+                  <div style="text-align:center;" >
+                    <p>You do not need an account to donate!</p>
+                  </div>
+                    <form method="post" class="loginForm" action='login/users'>
+                          <p>Username: </p><input type="text" name="userid" title="Please enter your username" size="15" required>
+                          <br>
+                          <p>Password: </p><input type="password" name="password" autocomplete="off" size="15" title="Please enter your password" required>
+                          <br>
+                          <button name="submit" type="submit" class="btn btn-primary btn-success">Login</button>
+                    </form>
+                    <p>Don't have an account and want to volunteer? Create one here!</p><button name="modalCreateAccount" class="btn btn-primary">Create Account</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        <!-- End of Modal -->
+
+        <table>
+            <tr>
+                <td><h3 style="padding-left:30px">Refine Search:</h3></td>
+                <td>
+                    <div class="btn-group" style="padding-left:10px">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Sort By:
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">Newest/Oldest</a></li>
+                            <li><a href="#">Most/Least Visited</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group" style="padding-left:20px">
+                        <button id="dropdownBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                        Subject
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="searchingDropdown">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Math</a></li>
+                            <li><a href="#">Visual Arts</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Drama</a></li>
+                            <li><a href="#">Physical Education</a></li>
+                            <li><a href="#">Language Arts</a></li>
+                            <li><a href="#">Music</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table border="1" class="span10 ResultsTable">
+            <tr>
+                <td><h3>Results:</h3></td>
+            </tr>
+            <tr>
+                <td><h4 style="margin-left:20px"><a href="#">Generic Result 1</a></h4>
+                <p style="margin-left:20px"><i>Date Posted: Month, 1 2014</i></p>
+                <p style="margin-left:20px">Description:</p>
+                <textarea name="description" style="width: 900px; height: 100px; margin-left:20px" maxlength="512">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia bibendum mi, in sodales magna faucibus quis. Donec condimentum consectetur mauris, id dapibus odio sollicitudin quis. Proin blandit urna ac semper vestibulum. Nullam eget urna vitae lorem fermentum pharetra. Integer ac arcu porttitor, molestie mauris at, ullamcorper mauris. Praesent et suscipit lectus, at blandit dolor. Maecenas pretium vehicula felis in vestibulum. Pellentesque quis lorem posuere ligula ultrices congue. Praesent eget neque laoreet, cursus ante at, bibendum nunc. Sed pretium, quam sed suscipit iaculis, risus dui iaculis libero, et dapibus purus metus quis lacus. Morbi viverra vulputate arcu, in dapibus arcu rutrum ut. Morbi gravida massa neque, quis feugiat augue sollicitudin sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <div id="push"></div>
+    </div>
+        <!-- Start of Footer Navbar -->
+        <div id="footer">
+          <div class="container">
+            <p class="muted credit" id="fonts">&copy; Helping U Interact</p>
+          </div>
+        </div>
+        <!-- End of Footer Navbar -->
+
+    </div>
+  </body>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</html>

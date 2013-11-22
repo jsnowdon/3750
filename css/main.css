@@ -118,3 +118,7 @@ body {
 .CommunityMembers tr:nth-child(even) {
     background-color: #F2F2F2;
 }
+
+.ResultsTable tr:nth-child(odd) {
+    background-color: #F2F2F2;
+}
