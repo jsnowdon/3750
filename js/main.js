@@ -35,7 +35,7 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "GET",
-            url: "kirk/Retrieval.php",
+            url: "Retrieval.php",
             data: requestObject,
             }
         );
