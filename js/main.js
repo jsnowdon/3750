@@ -20,11 +20,22 @@ $(document).ready(function() {
         // username: teacher@s.com
         // password: password
         // http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php
+        var parameters = {
+        	"username" : username,
+        	"password" : password,
+        }
+
+        var requestObject = {
+        	"key" : "kidstrfasdf",
+        	"functionName" : "Login",
+        	"parameters" : parameters
+        }
+
         var request = $.ajax({
             dataType: "json",
             method: "POST",
             url: "kirk/Retrieval.php",
-            data: "{\n\    \"key\": \"123kidtribute\",\n    \"functionName\": \"Login\",\n    \"parameters\" : {\"username\": \"" + username + "\", \"password\": \"" + password + "\"},\n}"
+            data: requestObject,
             }
         );
         request.done(function (response, textStatus, jqXHR){
