@@ -8,9 +8,9 @@
     -moz-border-radius: 8px;
     -khtml-border-radius: 8px;  
     border-radius: 8px;
-    border:solid white 1px;
+    border:solid white 0px;
     overflow: hidden;
-    padding: 10px;
+    padding: 0px;
 }
 .image {
     background: white;
