@@ -32,7 +32,7 @@ $(document).ready(function() {
         request.done(function (response, textStatus, jqXHR){
         // log a message to the console
             alert("Hooray, it worked!");
-            loginSuccess();
+            loginSuccess(response);
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
             // log the error to the console
@@ -52,26 +52,8 @@ function logout()
     addDefaultHeader();
 }
 
-function loginSuccess()
+function loginSuccess(response)
 {
-    var response = {
-            "status" : "200",   
-            "statusMessage" : "OK",
-              "errors" : [],
-            "results" : {
-                "id" : 123,
-                "schoolId" : 1,
-                "userType" : "teacher",
-                "username": "bloblaw",
-                "password": null,
-                "name": "Bob Loblaw",
-                "title": "Mr.",
-                "email": "bob@example.com",
-                "skills": null,
-                "isVetted": null,
-                "bio": "This is a bio for Bob Loblaw.  He’s a pretty cool guy.",
-            }
-        };
     //alert(response["status"]);
     $('#signIn').modal('hide');
     addTeacherHeader();
