@@ -1,12 +1,21 @@
 $(document).ready(function() {
     
-    addDefaultHeader();
+    var loggedIn = readCookie("loggedin");
+    if(loggedIn != null) {
+        addTeacherHeader();
+        setUsername(loggedIn);
+    }
+    else {
+        addDefaultHeader();
+    }
     
     $('#targetLoginForm').submit(function( event ) {
+        event.preventDefault();
         var username = $("#usernameInput").val();
         var password = $("#passwordInput").val();
         
         alert("Pressed the login button " + username + ", " + password);
+        
         
         // username: teacher@s.com
         // password: password
@@ -23,16 +32,83 @@ $(document).ready(function() {
         request.done(function (response, textStatus, jqXHR){
         // log a message to the console
             alert("Hooray, it worked!");
+            loginSuccess();
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
             // log the error to the console
             alert(
-                "The following error occured: "+
-                textStatus, errorThrown
+                "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
             );
+        });
+        request.ajaxError(function( event, request, settings ) {
+            alert( "Error requesting page " + settings.url );
         });
     });
 });
+
+function logout()
+{
+    eraseCookie("loggedin");
+    addDefaultHeader();
+}
+
+function loginSuccess()
+{
+    var response = {
+            "status" : "200",   
+            "statusMessage" : "OK",
+              "errors" : [],
+            "results" : {
+                "id" : 123,
+                "schoolId" : 1,
+                "userType" : "teacher",
+                "username": "bloblaw",
+                "password": null,
+                "name": "Bob Loblaw",
+                "title": "Mr.",
+                "email": "bob@example.com",
+                "skills": null,
+                "isVetted": null,
+                "bio": "This is a bio for Bob Loblaw.  He’s a pretty cool guy.",
+            }
+        };
+    //alert(response["status"]);
+    $('#signIn').modal('hide');
+    addTeacherHeader();
+    setUsername(response["results"]["username"]);
+    if(readCookie("loggedin") == null) {
+        createCookie("loggedin",response["results"]["username"],5);
+    }
+}
+
+function setUsername(username) {
+    $('#usernameTag').text(username);
+}
+
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
 
 
 function addDefaultHeader()
@@ -51,7 +127,7 @@ function addDefaultHeader()
 function addTeacherHeader()
 {
     $("#pageHeader").empty();
-    $("#pageHeader").append("<div class=\"navbar navbar-static-top\" id=\"header\" role=\"navigation\"><div class=\"container\"><div class=\"navbar-header\" id=\"header\"><div style=\"float:right; padding-right:10px\" ><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\"  href=\"#signout\" data-toggle=\"modal\">Logout</button><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\" onclick=\"location.href='#';\">View Projects</button><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\" onclick=\"location.href='#';\">Create Project</button><p style=\"float:right; padding:10px\" id=\"fonts\">Welcome, Username</p></div><h1 style=\"float:left;padding-left:10px\" id=\"fonts\">KidTribute<h1><h4 style=\"float:left;padding-left:10px\" id=\"fonts\">Helps schools help kids.<h4></div><br><br><br><div style=\"padding-left:10px\"><div class=\"input-prepend input-append\"><div class=\"btn-group\"><button id=\"dropdownBtn\" class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" >Subject<span class=\"caret\"></span></button><ul class=\"dropdown-menu\" id=\"searchingDropdown\"><li><a href=\"#\">All</a></li><li><a href=\"#\">History</a></li><li><a href=\"#\">Science</a></li><li><a href=\"#\">Math</a></li><li><a href=\"#\">Visual Arts</a></li><li><a href=\"#\">Geography</a></li><li><a href=\"#\">Technology</a></li><li><a href=\"#\">Drama</a></li><li><a href=\"#\">Physical Education</a></li><li><a href=\"#\">Language Arts</a></li><li><a href=\"#\">Music</a></li></ul></div><input type=\"text\" class=\"span8 search-query\"><button type=\"submit\" class=\"btn btn-primary\">Search</button></div></div></div></div>");
+    $("#pageHeader").append("<div class=\"navbar navbar-static-top\" id=\"header\" role=\"navigation\"><div class=\"container\"><div class=\"navbar-header\" id=\"header\"><div style=\"float:right; padding-right:10px\" ><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\"  onclick=\"logout()\" data-toggle=\"modal\">Logout</button><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\" onclick=\"location.href='#';\">View Projects</button><button style=\"float:right; padding:5px margin-left: 5px\" class=\"btn btn-default\" onclick=\"location.href='#';\">Create Project</button><p style=\"float:right; padding:5px; padding-top:10px; color:WHITE\" id=\"usernameTag\">Username</p><p style=\"float:right; padding:5px; padding-top:10px;\" id=\"fonts\">Welcome,</p></div><h1 style=\"float:left;padding-left:10px\" id=\"fonts\">KidTribute<h1><h4 style=\"float:left;padding-left:10px\" id=\"fonts\">Helps schools help kids.<h4></div><br><br><br><div style=\"padding-left:10px\"><div class=\"input-prepend input-append\"><div class=\"btn-group\"><button id=\"dropdownBtn\" class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" >Subject<span class=\"caret\"></span></button><ul class=\"dropdown-menu\" id=\"searchingDropdown\"><li><a href=\"#\">All</a></li><li><a href=\"#\">History</a></li><li><a href=\"#\">Science</a></li><li><a href=\"#\">Math</a></li><li><a href=\"#\">Visual Arts</a></li><li><a href=\"#\">Geography</a></li><li><a href=\"#\">Technology</a></li><li><a href=\"#\">Drama</a></li><li><a href=\"#\">Physical Education</a></li><li><a href=\"#\">Language Arts</a></li><li><a href=\"#\">Music</a></li></ul></div><input type=\"text\" class=\"span8 search-query\"><button type=\"submit\" class=\"btn btn-primary\">Search</button></div></div></div></div>");
     $('#searchingDropdown li a').click(function() {
         $("#dropdownBtn").text($(this).text());
     });
@@ -60,3 +136,4 @@ function addTeacherHeader()
         $("#subjectBtn").text($(this).text());
     });
 }
+
