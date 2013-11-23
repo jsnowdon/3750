@@ -13,7 +13,7 @@ $(document).ready(function() {
         // http://odin.socs.uoguelph.ca:83/kirk/retrieval.php
         var request = $.ajax({
             method: "POST",
-            url: "http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php",
+            url: "kirk/Retrieval.php",
             data: {
                 "key" : "123kidtribute",
                 "functionName" : "Login",
