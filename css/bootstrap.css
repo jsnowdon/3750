@@ -1995,6 +1995,7 @@ legend + .control-group {
 }
 
 table {
+  border: none;
   max-width: 100%;
   background-color: transparent;
   border-collapse: collapse;
