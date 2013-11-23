@@ -16,24 +16,25 @@ $(document).ready(function() {
         
         alert("Pressed the login button " + username + ", " + password);
         
-        
         // username: teacher@s.com
         // password: password
         // http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php
         var parameters = {
         	"username" : username,
         	"password" : password,
-        }
+        };
 
         var requestObject = {
         	"key" : "123kidtribute",
         	"functionName" : "Login",
-        	"parameters" : parameters,
-        }
+        	"parameters" :  parameters,
+        };
+
+        console.log(requestObject);
 
         var request = $.ajax({
             dataType: "json",
-            method: "POST",
+            method: "GET",
             url: "kirk/Retrieval.php",
             data: requestObject,
             }
@@ -49,9 +50,9 @@ $(document).ready(function() {
                 "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
             );
         });
-        request.ajaxError(function( event, request, settings ) {
+        /*request.ajaxError(function( event, request, settings ) {
             alert( "Error requesting page " + settings.url );
-        });
+        });*/
     });
 });
 
