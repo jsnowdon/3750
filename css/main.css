@@ -53,6 +53,16 @@
 	color:#FFFFFF;
 }
 
+a.homepagetitle,a.homepagetitle:link, a.homepagetitle:visited {
+color: #FFFFFF;
+text-decoration: none;
+}
+a.homepagetitle:hover, a.homepagetitle:active {
+color:#7829A0;
+background-color: #FFFFFF;
+text-decoration: none;
+}
+
 .icon-zoom-in
 {
   position:relative;
