@@ -21,14 +21,14 @@ $(document).ready(function() {
         // password: password
         // http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php
         var parameters = {
-        	username : username,
-        	password : password,
+        	"username" : username,
+        	"password" : password,
         }
 
         var requestObject = {
-        	key : "123kidtribute",
-        	functionName : "Login",
-        	parameters : parameters
+        	"key" : "123kidtribute",
+        	"functionName" : "Login",
+        	"parameters" : parameters,
         }
 
         var request = $.ajax({
