@@ -14,8 +14,6 @@ $(document).ready(function() {
         var username = $("#usernameInput").val();
         var password = $("#passwordInput").val();
         
-        alert("Pressed the login button " + username + ", " + password);
-        
         // username: teacher@s.com
         // password: password
         // http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php
@@ -29,8 +27,6 @@ $(document).ready(function() {
         	"functionName" : "Login",
         	"parameters" :  parameters,
         };
-
-        console.log(requestObject);
 
         var request = $.ajax({
             dataType: "json",
