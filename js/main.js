@@ -15,7 +15,25 @@ $(document).ready(function() {
         var schoolID = readCookie("schoolid");
         $("#nameField").text(name);
         $("#emailField").text(email);
-        $("#schoolidField").text(schoolID);
+        // get the name of the school by it's schoolid
+        var parameters = {
+        	"schoolId" : schoolID,
+        };
+        var requestObject = {
+        	"key" : "123kidtribute",
+        	"functionName" : "GetSchool",
+        	"parameters" :  parameters,
+        };
+        var request = $.ajax({
+            dataType: "json",
+            method: "GET",
+            url: "Retrieval.php",
+            data: requestObject,
+            }
+        );
+        request.done(function (response, textStatus, jqXHR){
+            $("#schoolidField").text(response);
+        });
     }
     
     $('#targetLoginForm').submit(function( event ) {
