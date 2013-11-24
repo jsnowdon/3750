@@ -9,8 +9,8 @@ $(document).ready(function() {
         $("#schoolidField").val(schoolID);
     }
     $.getScript("main.js", function(){
-    }
-}
+    });
+});
 
 
 function createCookie(name,value,days) {
