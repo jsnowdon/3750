@@ -35,7 +35,7 @@
                     <tr>
                         <td>Subject: </td>
                         <td><div class="btn-group">
-                            <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" >
+                            <button id="subjectBtn" class="btn dropdown-toggle" data-toggle="dropdown" title="Please select the subject your project falls under">
                             Subject
                             <span class="caret"></span>
                             </button>
@@ -59,11 +59,11 @@
                     </tr>
                     <tr>
                         <td>Start Date: </td>
-                        <td><input type="date" name="startDate" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                        <td><input type="date" name="startDate" title="Please enter the start date for the project" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
                     </tr>
                     <tr>
                         <td>End Date: </td>
-                        <td><input type="date" name="endDate" title="Please enter the date" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                        <td><input type="date" name="endDate" title="Please enter the end date for the project" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
                     </tr>
                     <tr>
                         <td>Teacher Name: </td>
@@ -79,7 +79,7 @@
                     </tr>
                 </table>
                 <h5 style="margin-left:20px">Description:</h5>
-                <textarea name="description" style="width: 350px; height: 100px; margin-left:20px; resize: none" maxlength="512" placeholder="Tell us about your project"></textarea>
+                <textarea name="description" title="Describe your project in this text area" style="width: 350px; height: 100px; margin-left:20px; resize: none" maxlength="512" placeholder="Tell us about your project"></textarea>
                 <br>
                 <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
             </form>
