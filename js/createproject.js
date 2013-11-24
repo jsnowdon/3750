@@ -8,6 +8,8 @@ $(document).ready(function() {
         $("#emailField").val(email);
         $("#schoolidField").val(schoolID);
     }
+    $.getScript("main.js", function(){
+    }
 }
 
 
