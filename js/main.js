@@ -86,7 +86,7 @@ function logout()
     eraseCookie("email");
     eraseCookie("schoolid");
     eraseCookie("loggedin");
-    window.location("index.html");
+    window.location.assign("index.html");
     //addDefaultHeader();
 }
 
