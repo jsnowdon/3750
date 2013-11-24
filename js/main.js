@@ -16,7 +16,7 @@ $(document).ready(function() {
         
         // username: teacher@s.com
         // password: password
-        // http://odin.socs.uoguelph.ca:83/kirk/Retrieval.php
+        // http://odin.socs.uoguelph.ca:83/Retrieval.php
         var parameters = {
         	"username" : username,
         	"password" : password,
@@ -54,6 +54,10 @@ $(document).ready(function() {
 
 function logout()
 {
+    eraseCookie("userid");
+    eraseCookie("name");
+    eraseCookie("email");
+    eraseCookie("schoolid");
     eraseCookie("loggedin");
     addDefaultHeader();
 }
@@ -65,6 +69,10 @@ function loginSuccess(response)
     addTeacherHeader();
     setUsername(response["results"]["username"]);
     if(readCookie("loggedin") == null) {
+        createCookie("userid",response["results"]["id"],5);
+        createCookie("name",response["results"]["name"],5);
+        createCookie("email",response["results"]["email"],5);
+        createCookie("schoolid",response["results"]["schoolId"],5);
         createCookie("loggedin",response["results"]["username"],5);
     }
 }
