@@ -13,9 +13,9 @@ $(document).ready(function() {
         var name = readCookie("name");
         var email = readCookie("email");
         var schoolID = readCookie("schoolid");
-        $("#nameField").html(name);
-        $("#emailField").html(email);
-        $("#schoolidField").html(schoolID);
+        $("#nameField").text(name);
+        $("#emailField").text(email);
+        $("#schoolidField").text(schoolID);
     }
     
     $('#targetLoginForm').submit(function( event ) {
