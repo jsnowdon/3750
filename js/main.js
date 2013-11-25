@@ -26,8 +26,8 @@ $(document).ready(function() {
         };
         var request = $.ajax({
             dataType: "json",
-            method: "GET",
-            url: "Retrieval.php",
+            method: "POST",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
@@ -54,14 +54,14 @@ $(document).ready(function() {
 
         var requestObject = {
         	"key" : "123kidtribute",
-        	"functionName" : "Login",
+        	"functionName" : "CreateProject",
         	"parameters" :  parameters,
         };
 
         var request = $.ajax({
             dataType: "json",
-            method: "GET",
-            url: "Retrieval.php",
+            method: "PUT",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
@@ -99,8 +99,8 @@ $(document).ready(function() {
 
         var request = $.ajax({
             dataType: "json",
-            method: "GET",
-            url: "Retrieval.php",
+            method: "POST",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
@@ -205,5 +205,29 @@ function addTeacherHeader()
 
 function getSearchResults(subject)
 {
-	alert(subject);
+    var requestObject = {
+        "key" : "123kidtribute",
+        "functionName" : "GetAllProjectsWhere",
+        "parameters" :  "\"\"&\"\"&\"\"&\"\"&" + subject,
+    };
+
+    var request = $.ajax({
+        dataType: "json",
+        method: "GET",
+        url: "Retrieval.php",
+        data: requestObject,
+        }
+    );
+    request.done(function (response, textStatus, jqXHR){
+    // log a message to the console
+        alert("Hooray, it worked!");
+        console.log(response);
+    });
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        alert(
+            "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
+        );
+        console.log(response);
+    });
 }
