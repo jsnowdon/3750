@@ -32,9 +32,58 @@ $(document).ready(function() {
             }
         );
         request.done(function (response, textStatus, jqXHR){
-            $("#schoolidField").text(response);
+            $("#schoolidField").text(response["name"]);
         });
     }
+    
+    $('#createProjectForm').submit(function( event ) {
+        event.preventDefault();
+        var title = $("#projectTitle").val();
+        var subject = $("#subjectBtn").text();
+        var goal = $("#projectGoal").val();
+        var startDate = $("#projectStartDate").val();
+        var endDate = $("#projectEndDate").val();
+        alert(title + subject + goal + startDate + endDate + description);
+        
+        var parameters = {
+        	"id" : null,
+        	"schoolId" : readCookie("schoolid"),
+            "userId" : readCookie("userid"),
+            "userEmail" : $("#emailField").text(),
+            "title" : $("#projectTitle").val(),
+            "description" : $("#projectDescription").val(),
+            "startDate" : $("#projectStartDate").val(),
+            "endDate" : $("#projectEndDate").val(),
+            "imageUrl" : null,
+            "category" : $("#subjectBtn").text(),
+        };
+
+        var requestObject = {
+        	"key" : "123kidtribute",
+        	"functionName" : "Login",
+        	"parameters" :  parameters,
+        };
+
+        var request = $.ajax({
+            dataType: "json",
+            method: "GET",
+            url: "Retrieval.php",
+            data: requestObject,
+            }
+        );
+        request.done(function (response, textStatus, jqXHR){
+        // log a message to the console
+            alert("Hooray, it worked!");
+            loginSuccess(response);
+        });
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // log the error to the console
+            alert(
+                "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
+            );
+        });
+        
+    });
     
     $('#targetLoginForm').submit(function( event ) {
         event.preventDefault();

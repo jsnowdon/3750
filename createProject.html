@@ -26,11 +26,11 @@
         <!-- Start of content -->
         <div class="span6">
             <h1>Enter Your Project Details</h1>
-            <form method="post" class="createProject">
+            <form id='createProjectForm' method="post" class="createProject">
                 <table>
                     <tr>
                         <td>Project Title: </td>
-                        <td><input type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
+                        <td><input id="projectTitle" type="text" name="title" title="Please enter your project's title" style="width:300px;" required></td>
                     </tr>
                     <tr>
                         <td>Subject: </td>
@@ -55,15 +55,15 @@
                     </tr>
                     <tr>
                         <td>Goal: </td>
-                        <td><input type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
+                        <td><input id="projectGoal" type="text" name="goal" title="Please enter your project's goal" style="width:300px;" required></td>
                     </tr>
                     <tr>
                         <td>Start Date: </td>
-                        <td><input type="date" name="startDate" title="Please enter the start date for the project" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                        <td><input id="projectStartDate" type="text" pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$" name="startDate" title="Please enter the start date for the project in format yyyy-mm-dd" style="width:300px;" placeholder="yyyy-mm-dd" required></td>
                     </tr>
                     <tr>
                         <td>End Date: </td>
-                        <td><input type="date" name="endDate" title="Please enter the end date for the project" style="width:300px;" placeholder="mm/dd/yyyy" required></td>
+                        <td><input id="projectEndDate" type="text" pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$" name="endDate" title="Please enter the end date for the project in format yyyy-mm-dd" style="width:300px;" placeholder="yyyy-mm-dd" required></td>
                     </tr>
                     <tr>
                         <td>Teacher Name: </td>
@@ -79,7 +79,7 @@
                     </tr>
                 </table>
                 <h5 style="margin-left:20px">Description:</h5>
-                <textarea name="description" title="Describe your project in this text area" style="width: 350px; height: 100px; margin-left:20px; resize: none" maxlength="512" placeholder="Tell us about your project"></textarea>
+                <textarea name="description" id="projectDescription" title="Describe your project in this text area" style="width: 350px; height: 100px; margin-left:20px; resize: none" maxlength="512" placeholder="Tell us about your project"></textarea>
                 <br>
                 <button name="submit" type="submit" class="btn btn-primary btn-success" style="margin-left:20px">Submit</button>
             </form>
