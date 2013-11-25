@@ -60,7 +60,7 @@ $(document).ready(function() {
 
         var request = $.ajax({
             dataType: "json",
-            method: "POST",
+            method: "GET",
             url: "Retrieval.php",
             data: requestObject,
             }
