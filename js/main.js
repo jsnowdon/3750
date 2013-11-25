@@ -38,12 +38,6 @@ $(document).ready(function() {
     
     $('#createProjectForm').submit(function( event ) {
         event.preventDefault();
-        var title = $("#projectTitle").val();
-        var subject = $("#subjectBtn").text();
-        var goal = $("#projectGoal").val();
-        var startDate = $("#projectStartDate").val();
-        var endDate = $("#projectEndDate").val();
-        alert(title + subject + goal + startDate + endDate + description);
         
         var parameters = {
         	"id" : null,
@@ -73,8 +67,7 @@ $(document).ready(function() {
         );
         request.done(function (response, textStatus, jqXHR){
         // log a message to the console
-            alert("Hooray, it worked!");
-            loginSuccess(response);
+            alert("Hooray, it worked! going to view projects");
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
             // log the error to the console
