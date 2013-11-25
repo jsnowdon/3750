@@ -32,7 +32,7 @@ $(document).ready(function() {
             }
         );
         request.done(function (response, textStatus, jqXHR){
-            $("#schoolidField").text(response["name"]);
+            $("#schoolidField").text(response["results"]["name"]);
         });
     }
     
