@@ -203,3 +203,7 @@ function addTeacherHeader()
     });
 }
 
+function getSearchResults(subject)
+{
+	alert(subject);
+}
