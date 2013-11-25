@@ -11,6 +11,8 @@
     border: none;
     overflow: hidden;
     padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .image {
     background: white;
