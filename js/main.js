@@ -145,7 +145,7 @@ function loginSuccess(response)
     //alert(response["status"]);
     $('#signIn').modal('hide');
     addTeacherHeader();
-    setUsername(response["results"]["username"]);
+    setUsername(response["results"]["name"]);
     if(readCookie("loggedin") == null) {
         createCookie("userid",response["results"]["id"],5);
         createCookie("name",response["results"]["name"],5);
