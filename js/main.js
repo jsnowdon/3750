@@ -9,7 +9,8 @@ $(document).ready(function() {
         addDefaultHeader();
     }
     
-    if($("#schoolidField") != null) {
+    if($("#schoolidField").length > 0) {
+        
         var name = readCookie("name");
         var email = readCookie("email");
         var schoolID = readCookie("schoolid");
@@ -27,7 +28,7 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "POST",
-            url: "retrieval.php",
+            url: "retrieval2.php",
             data: requestObject,
             }
         );
@@ -61,7 +62,7 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "PUT",
-            url: "retrieval.php",
+            url: "retrieval2.php",
             data: requestObject,
             }
         );
@@ -100,19 +101,26 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "POST",
-            url: "retrieval.php",
+            url: "retrieval2.php",
             data: requestObject,
             }
         );
         request.done(function (response, textStatus, jqXHR){
-        // log a message to the console
-            alert("Hooray, it worked!");
-            loginSuccess(response);
+
+            if(response["errors"] == null){
+                // log a message to the console
+                alert("Hooray, it worked!");
+                loginSuccess(response);
+            }
+
+            else{
+                alert(response["errors"]);
+            }
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
             // log the error to the console
             alert(
-                "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
+                "The following error occured: " + jqXHR.responseText + ", " + textStatus + ", " + errorThrown
             );
         });
         /*request.ajaxError(function( event, request, settings ) {
@@ -205,16 +213,21 @@ function addTeacherHeader()
 
 function getSearchResults(subject)
 {
+
+    var parameters = {
+        "query" : subject,
+    };
+
     var requestObject = {
         "key" : "123kidtribute",
         "functionName" : "GetAllProjectsWhere",
-        "parameters" :  "\"\"&\"\"&\"\"&\"\"&" + subject,
+        "parameters" :  parameters,
     };
 
     var request = $.ajax({
         dataType: "json",
-        method: "GET",
-        url: "Retrieval.php",
+        method: "POST",
+        url: "retrieval2.php",
         data: requestObject,
         }
     );
