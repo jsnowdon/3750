@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    var loggedIn = readCookie("loggedin");
+    var loggedIn = readCookie("name");
     if(loggedIn != null) {
         addTeacherHeader();
         setUsername(loggedIn);
