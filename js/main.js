@@ -28,13 +28,27 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "POST",
-            url: "retrieval2.php",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
         request.done(function (response, textStatus, jqXHR){
             $("#schoolidField").text(response["results"]["name"]);
         });
+    }
+
+    if($("#searchResults").length > 0) {
+
+        var subject = readCookie("searchSubject");
+        var term = readCookie("searchTerm");
+        if(subject != null){
+
+            if(term != ""){
+                getSearchResults(subject, term)
+            }
+
+            getSearchResults(subject, term);
+        }
     }
     
     $('#createProjectForm').submit(function( event ) {
@@ -62,7 +76,7 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "PUT",
-            url: "retrieval2.php",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
@@ -101,15 +115,13 @@ $(document).ready(function() {
         var request = $.ajax({
             dataType: "json",
             method: "POST",
-            url: "retrieval2.php",
+            url: "retrieval.php",
             data: requestObject,
             }
         );
         request.done(function (response, textStatus, jqXHR){
 
             if(response["errors"] == null){
-                // log a message to the console
-                alert("Hooray, it worked!");
                 loginSuccess(response);
             }
 
@@ -211,12 +223,43 @@ function addTeacherHeader()
     });
 }
 
-function getSearchResults(subject)
+function addSearchResults(resultsArray)
 {
+    for( var i = 0; i < resultsArray.length; i++){
+        alert(resultsArray[i]);
+    }
+    //$("#searchResults").empty();
+    //$("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"viewProject.html\">Generic Result 1</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: Month, 1 2014</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: Month, 31 2014</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia bibendum mi, in sodales magna faucibus quis. Donec condimentum consectetur mauris, id dapibus odio sollicitudin quis. Proin blandit urna ac semper vestibulum. Nullam eget urna vitae lorem fermentum pharetra. Integer ac arcu porttitor, molestie mauris at, ullamcorper mauris. Praesent et suscipit lectus, at blandit dolor. Maecenas pretium vehicula felis in vestibulum. Pellentesque quis lorem posuere ligula ultrices congue.</textarea></form></td></tr>");
+}
 
-    var parameters = {
-        "query" : subject,
-    };
+function moveToSearchPage(subject, term)
+{
+    createCookie("searchSubject",subject,5);
+    createCookie("searchTerm",term,5);
+    window.location = "searchResults.html";
+}
+
+function getSearchResults(subject, term)
+{
+    var parameters;
+
+    if(term == ""){
+
+        parameters = {
+            "query" :  subject,
+        };
+    }
+
+    else{
+        
+        parameters = {
+            "query" :  term,
+            "school":  null,
+            "teacher": null,
+            "title" :  null,
+            "subject": subject
+        };
+    }
 
     var requestObject = {
         "key" : "123kidtribute",
@@ -227,14 +270,15 @@ function getSearchResults(subject)
     var request = $.ajax({
         dataType: "json",
         method: "POST",
-        url: "retrieval2.php",
+        url: "retrieval.php",
         data: requestObject,
         }
     );
     request.done(function (response, textStatus, jqXHR){
-    // log a message to the console
-        alert("Hooray, it worked!");
         console.log(response);
+        addSearchResults(response["results"]);
+        eraseCookie("searchSubject");
+        eraseCookie("searchTerm");
     });
     request.fail(function (jqXHR, textStatus, errorThrown){
         // log the error to the console
@@ -242,5 +286,7 @@ function getSearchResults(subject)
             "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
         );
         console.log(response);
+        eraseCookie("searchSubject");
+        eraseCookie("searchTerm");
     });
 }

@@ -157,6 +157,7 @@ body {
 }
 #footer {
   background-color: #7829A0;
+  clear: both;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
