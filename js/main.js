@@ -359,7 +359,7 @@ function addTeacherResults(resultsArray)
         var title = resultsArray[i]["title"];
         var description = resultsArray[i]["description"];
         var projectid = resultsArray[i]["id"];
-        $("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"#\" onclick=\"viewProject('" + projectid + "')\">" + title + "</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: " + startDate + "</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: " + endDate + "</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>" + description + "</textarea></form></td></tr><td><h5 style=\"margin-left:10px\"><font size=\"4\" style=\"color:green;\">Approved</font></h5></td>");
+        $("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"#\" onclick=\"viewProject('" + projectid + "')\">" + title + "</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: " + startDate + "</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: " + endDate + "</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>" + description + "</textarea></form></td><td><h5 style=\"margin-left:10px\"><font size=\"4\" style=\"color:green;\">Approved</font></h5></td></tr>");
     }
 }
 
