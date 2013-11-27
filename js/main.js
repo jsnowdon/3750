@@ -233,7 +233,6 @@ function addTeacherHeader()
 
 function viewProject(id)
 {
-    alert("got id:" + id);
     createCookie("projectid",id,5);
     window.location = "viewProject.html";
 }
