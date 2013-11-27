@@ -271,13 +271,13 @@ function getProject(id)
 
 function addViewProjectInfo(result)
 {
-    $("#projectTitle").val(result["title"]);
-    $("#schoolName").val(result["schoolName"]);
-    $("#projectDescription").val(result["description"]);
-    $("#projectStartDate").val(result["startDate"]);
-    $("#projectEndDate").val(result["endDate"]);
-    $("#projectTeacherName").val(result["userId"]);
-    $("#projectTeacherEmail").val(result["userEmail"]);
+    $("#projectTitle").text(result["title"]);
+    $("#schoolName").text(result["schoolName"]);
+    $("#projectDescription").text(result["description"]);
+    $("#projectStartDate").text(result["startDate"]);
+    $("#projectEndDate").text(result["endDate"]);
+    $("#projectTeacherName").text(result["userId"]);
+    $("#projectTeacherEmail").text(result["userEmail"]);
 }
 
 function addSearchResults(resultsArray)
