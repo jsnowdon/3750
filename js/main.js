@@ -276,8 +276,36 @@ function addViewProjectInfo(result)
     $("#projectDescription").text(result["description"]);
     $("#projectStartDate").text(result["startDate"]);
     $("#projectEndDate").text(result["endDate"]);
-    $("#projectTeacherName").text(result["userId"]);
     $("#projectTeacherEmail").text(result["userEmail"]);
+    
+    var parameters = {
+        "userId" :  result["userId"],
+    };
+
+    var requestObject = {
+        "key" : "123kidtribute",
+        "functionName" : "GetUser",
+        "parameters" :  parameters,
+    };
+
+    var request = $.ajax({
+        dataType: "json",
+        method: "POST",
+        url: "retrieval.php",
+        data: requestObject,
+        }
+    );
+    request.done(function (response, textStatus, jqXHR){
+        console.log(response);
+        $("#projectTeacherName").text(response["results"]["name"]);
+    });
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        alert(
+            "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
+        );
+    });
+    
 }
 
 function addSearchResults(resultsArray)
