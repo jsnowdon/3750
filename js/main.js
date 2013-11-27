@@ -69,15 +69,12 @@ $(document).ready(function() {
     }
 
     if($("#searchResults").length > 0) {
-
         var subject = readCookie("searchSubject");
         var term = readCookie("searchTerm");
         if(subject != null){
-
-            if(term != ""){
-                getSearchResults(subject, term)
+            if(typeof subject === 'undefined' || subject == "All") {
+                subject = null;
             }
-
             getSearchResults(subject, term);
         }
     }
