@@ -17,6 +17,29 @@ $(document).ready(function() {
         }
     }
     
+    if($("#yourProjects").length > 0) {
+        var userid = readCookie("userid");
+        // get the name of the school by it's schoolid
+        var parameters = {
+        	"teacherId" : userid,
+        };
+        var requestObject = {
+        	"key" : "123kidtribute",
+        	"functionName" : "GetAllProjectsForTeacher",
+        	"parameters" :  parameters,
+        };
+        var request = $.ajax({
+            dataType: "json",
+            method: "POST",
+            url: "retrieval.php",
+            data: requestObject,
+            }
+        );
+        request.done(function (response, textStatus, jqXHR){
+            addTeacherResults(response["results"]);
+        });
+    }
+        
     if($("#schoolidField").length > 0) {
         
         var name = readCookie("name");
@@ -306,6 +329,39 @@ function addViewProjectInfo(result)
         );
     });
     
+}
+
+function addTeacherProjects(resultsArray)
+{
+    //$("#searchResults").empty();
+    if(resultsArray.length == 0){
+         $("#searchResults").append("<tr><td><h3>Sorry, no results found<h3></td></tr>")
+    }
+
+    for( var i = 0; i < resultsArray.length; i++){
+        var startDate = resultsArray[i]["startDate"];
+        var endDate = resultsArray[i]["endDate"];
+        var title = resultsArray[i]["title"];
+        var description = resultsArray[i]["description"];
+        var projectid = resultsArray[i]["id"];
+        $("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"#\" onclick=\"viewProject('" + projectid + "')\">" + title + "</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: " + startDate + "</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: " + endDate + "</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>" + description + "</textarea></form></td></tr>");
+    }
+}
+
+function addTeacherResults(resultsArray)
+{
+    if(resultsArray.length == 0){
+         $("#searchResults").append("<tr><td><h3>Sorry, no results found<h3></td></tr>")
+    }
+
+    for( var i = 0; i < resultsArray.length; i++){
+        var startDate = resultsArray[i]["startDate"];
+        var endDate = resultsArray[i]["endDate"];
+        var title = resultsArray[i]["title"];
+        var description = resultsArray[i]["description"];
+        var projectid = resultsArray[i]["id"];
+        $("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"#\" onclick=\"viewProject('" + projectid + "')\">" + title + "</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: " + startDate + "</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: " + endDate + "</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>" + description + "</textarea></form></td></tr><td><h5 style=\"margin-left:10px\"><font size=\"4\" style=\"color:green;\">Approved</font></h5></td>");
+    }
 }
 
 function addSearchResults(resultsArray)
