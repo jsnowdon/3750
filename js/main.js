@@ -90,7 +90,7 @@ $(document).ready(function() {
         );
         request.done(function (response, textStatus, jqXHR){
         // log a message to the console
-            alert("Hooray, it worked! going to view projects");
+            window.location = "teacherProjects.html";
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
             // log the error to the console
