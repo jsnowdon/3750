@@ -225,11 +225,14 @@ function addTeacherHeader()
 
 function addSearchResults(resultsArray)
 {
-    for( var i = 0; i < resultsArray.length; i++){
-        alert(resultsArray[i]);
-    }
     //$("#searchResults").empty();
-    //$("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"viewProject.html\">Generic Result 1</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: Month, 1 2014</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: Month, 31 2014</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia bibendum mi, in sodales magna faucibus quis. Donec condimentum consectetur mauris, id dapibus odio sollicitudin quis. Proin blandit urna ac semper vestibulum. Nullam eget urna vitae lorem fermentum pharetra. Integer ac arcu porttitor, molestie mauris at, ullamcorper mauris. Praesent et suscipit lectus, at blandit dolor. Maecenas pretium vehicula felis in vestibulum. Pellentesque quis lorem posuere ligula ultrices congue.</textarea></form></td></tr>");
+    for( var i = 0; i < resultsArray.length; i++){
+        var startDate = resultsArray[i]["startDate"];
+        var endDate = resultsArray[i]["endDate"];
+        var title = resultsArray[i]["title"];
+        var description = resultsArray[i]["description"];
+        $("#searchResults").append("<tr><td><form><h4 style=\"margin-left:20px\" id=\"Title\"><a href=\"viewProject.html\">" + title + "</a></h4><p style=\"margin-left:20px\" id=\"startDate\"><i>Date Posted: " + startDate + "</i></p><p style=\"margin-left:20px\" id=\"endDate\"><i>Date Expires: " + endDate + "</i></p><p style=\"margin-left:20px\">Description:</p><textarea name=\"description\" title=\"Description\" style=\"width: 900px; height: 86px; margin-left:20px; resize:none\" maxlength=\"512\" id=\"description\" readonly>" + description + "</textarea></form></td></tr>");
+    }
 }
 
 function moveToSearchPage(subject, term)
@@ -285,7 +288,6 @@ function getSearchResults(subject, term)
         alert(
             "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
         );
-        console.log(response);
         eraseCookie("searchSubject");
         eraseCookie("searchTerm");
     });
