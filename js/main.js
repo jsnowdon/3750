@@ -259,6 +259,7 @@ function getProject(id)
     );
     request.done(function (response, textStatus, jqXHR){
         console.log(response);
+        addViewProjectInfo(response["results"]);
     });
     request.fail(function (jqXHR, textStatus, errorThrown){
         // log the error to the console
@@ -266,6 +267,17 @@ function getProject(id)
             "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
         );
     });
+}
+
+function addViewProjectInfo(result)
+{
+    $("#projectTitle").val(result["title"]);
+    $("#schoolName").val(result["schoolName"]);
+    $("#projectDescription").val(result["description"]);
+    $("#projectStartDate").val(result["startDate"]);
+    $("#projectEndDate").val(result["endDate"]);
+    $("#projectTeacherName").val(result["userId"]);
+    $("#projectTeacherEmail").val(result["userEmail"]);
 }
 
 function addSearchResults(resultsArray)
