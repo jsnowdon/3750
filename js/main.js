@@ -226,6 +226,10 @@ function addTeacherHeader()
 function addSearchResults(resultsArray)
 {
     //$("#searchResults").empty();
+    if(resultsArray.length == 0){
+         $("#searchResults").append("<tr><td><h3>Sorry, no results found<h3></td></tr>")
+    }
+
     for( var i = 0; i < resultsArray.length; i++){
         var startDate = resultsArray[i]["startDate"];
         var endDate = resultsArray[i]["endDate"];
