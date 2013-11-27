@@ -175,5 +175,8 @@ body {
 }
 
 .ResultsTable tr:nth-child(odd) {
-    background-color: #F2F2F2;
+    background-color: #F0FAFA;
+}
+.ResultsTable tr:nth-child(even) {
+    background-color: #FFFFFF;
 }
