@@ -9,6 +9,14 @@ $(document).ready(function() {
         addDefaultHeader();
     }
     
+    if($("#projectTitle").length > 0) {
+        var projectid = readCookie("projectid");
+        if(projectid != null) {
+            eraseCookie("projectid");
+            getProject(projectid);
+        }
+    }
+    
     if($("#schoolidField").length > 0) {
         
         var name = readCookie("name");
@@ -226,6 +234,38 @@ function addTeacherHeader()
 function viewProject(id)
 {
     alert("got id:" + id);
+    createCookie("projectid",id,5);
+    window.location = "viewProject.html";
+}
+
+function getProject(id)
+{
+    var parameters = {
+        "projectId" :  id,
+    };
+
+    var requestObject = {
+        "key" : "123kidtribute",
+        "functionName" : "GetProject",
+        "parameters" :  parameters,
+    };
+
+    var request = $.ajax({
+        dataType: "json",
+        method: "POST",
+        url: "retrieval.php",
+        data: requestObject,
+        }
+    );
+    request.done(function (response, textStatus, jqXHR){
+        console.log(response);
+    });
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        alert(
+            "The following error occured: " + jqXHR.responseText + textStatus + errorThrown
+        );
+    });
 }
 
 function addSearchResults(resultsArray)
